@@ -23,14 +23,14 @@ print('TELEGRAM LISTENER READY')
 @client.on(events.NewMessage(chats=chat_test))
 async def new_message_listener(event):
     # get message
-    operation = src.format_message(event.message.message)
+    operation = src.format_message_text(event.message)
 
-    socket.send_string(operation)
-    print(operation)
-    time.sleep(2)
+    if operation is not None:
+        socket.send_string(operation)
+        print(operation)
 
-    message = socket.recv()
-    print(message)
+        messageRecv = socket.recv().decode('utf-8')
+        print(messageRecv)
 
 
 with client:
