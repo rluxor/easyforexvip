@@ -42,7 +42,7 @@ def format_message_text(message):
                     + ',' + output[3] + ',' + output[5] + ',' + output[8] + ',' + output[11] + ',' + output[14]
 
     # Operaciones take profit
-    if 'HIT TP' in message_text or 'HIT SL' in message_text:
+    if ' CUT ' in message_text or ' CLOSE ' in message_text:
 
         if message.is_reply:
 
