@@ -1,9 +1,8 @@
 # This is a sample Python script.
 import telegram_client as tc
 import src
-from telethon import TelegramClient, events, sync
+from telethon import events
 import zmq
-import time
 
 # ID easy forex vip
 chat = 1436688109
@@ -25,7 +24,7 @@ client = tc.init_telegram_client()
 context = zmq.Context()
 socket = context.socket(zmq.REQ)
 socket.bind(socket_address)
-#socket.bind("tcp://127.0.0.1:9999")
+# socket.bind("tcp://127.0.0.1:9999")
 
 print('TELEGRAM LISTENER READY ON ADDRESS', socket_address)
 
@@ -35,13 +34,14 @@ async def new_message_listener(event):
     # get message
     operation = src.format_message_text(event.message)
 
-    if operation is not None:
+    if operation is None:
+        print("-- MSG NOT SEND -->: ", event.message.message)
+    else:
         socket.send_string(operation)
         print(operation)
 
         messageRecv = socket.recv().decode('utf-8')
         print(messageRecv)
-
 
 with client:
     client.run_until_disconnected()

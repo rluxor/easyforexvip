@@ -47,7 +47,7 @@ def format_message_text(message):
         if message.is_reply:
 
             # Obtener el id reply que tiene el original
-            operation = str(message.reply_to_msg_id) + ',' + message.date.strftime("%Y-%m-%d %H:%M:%S") + ',' + 'SYMBOL' + ',' + \
-                        'CLOSE' + ',0,0,0,0,0'
+            operation = str(message.reply_to_msg_id) + ',' + message.date.strftime("%Y-%m-%d %H:%M:%S") + ',' + \
+                        str(message.id) + ',' + 'CLOSE' + ',0,0,0,0,0'
 
     return operation
