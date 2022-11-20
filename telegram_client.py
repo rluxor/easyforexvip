@@ -5,13 +5,12 @@ from telethon import TelegramClient, events, sync
 config = configparser.ConfigParser()
 config.read('telegram.config')
 
-api_id = int(config['TELEGRAM']['api_id'])
-api_hash = str(config['TELEGRAM']['api_hash'])
-username = str(config['TELEGRAM']['username'])
-phone = str(config['TELEGRAM']['phone'])
-
 
 def init_telegram_client():
+    api_id = int(config['TELEGRAM-LOGIN']['api_id'])
+    api_hash = str(config['TELEGRAM-LOGIN']['api_hash'])
+    username = str(config['TELEGRAM-LOGIN']['username'])
+    phone = str(config['TELEGRAM-LOGIN']['phone'])
 
     client = TelegramClient(username, api_id, api_hash)
     client.start()
@@ -24,3 +23,18 @@ def init_telegram_client():
             client.sign_in(password=input('Password: '))
 
     return client
+
+
+def get_channels():
+
+    mode = config['MODE']['mode']
+
+    if mode == "TEST":
+        channels_test = config['TELEGRAM-CHANNELS']['channels_test']
+        channels = list(map(int, channels_test.split(',')))
+        return channels
+    else:
+        channels_real = config['TELEGRAM-CHANNELS']['channels_real']
+        channels = list(map(int, channels_real.split(',')))
+        return channels
+

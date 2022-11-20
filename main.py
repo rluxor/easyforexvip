@@ -1,21 +1,17 @@
 # This is a sample Python script.
+from datetime import time
+
 import telegram_client as tc
 import src
 from telethon import events
 import zmq
 
-# ID easy forex vip
-chat = 1436688109
-# Id canal de test
-chat_test = 1558245993
 
-# Pedimos el canal para escuchar
-chat_input = input("Introduce telegram channel to copy: ")
-chat_input = int(chat_input)
+channels = tc.get_channels()
 
 # Pedimos el socket para escuchar
-socket_input = input("Introduce server socket to listen: ")
-socket_address = "tcp://127.0.0.1:" + socket_input
+socket_input = int(input("Introduce server socket to listen: "))
+socket_address = "tcp://127.0.0.1:" + str(socket_input)
 
 # Inicializamos el cliente para leer de telegram
 client = tc.init_telegram_client()
@@ -24,21 +20,21 @@ client = tc.init_telegram_client()
 context = zmq.Context()
 socket = context.socket(zmq.REQ)
 socket.bind(socket_address)
-# socket.bind("tcp://127.0.0.1:9999")
 
-print('TELEGRAM LISTENER READY ON ADDRESS', socket_address)
+print(channels)
+print('TELEGRAM LISTENER READY ON ADDRESS: ', socket_address)
 
 
-@client.on(events.NewMessage(chats=chat_input))
+@client.on(events.NewMessage(chats=channels))
 async def new_message_listener(event):
     # get message
-    operation = src.format_message_text(event.message)
+    operation = src.format_message_text(event)
 
     if operation is None:
-        print("-- MSG NOT SEND -->: ", event.message.message)
+        print("--> {}: Msg Not Send: {}".format(event.chat.title, event.message.message))
     else:
-        socket.send_string(operation)
         print(operation)
+        socket.send_string(operation)
 
         messageRecv = socket.recv().decode('utf-8')
         print(messageRecv)
