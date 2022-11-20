@@ -103,20 +103,25 @@ def format_message_text(event):
     message = event.message
     chat = event.chat
 
-    # easy forex VIP
-    if chat.id == 1436688109:
-        operation = format_easy_forex(message, chat.title)
+    try:
+        # easy forex VIP
+        if chat.id == 1436688109:
+            operation = format_easy_forex(message, chat.title)
 
-    # blue forex signal
-    if chat.id == 1262709229:
-        operation = format_blue_forex(message, chat.title)
+        # blue forex signal
+        if chat.id == 1262709229:
+            operation = format_blue_forex(message, chat.title)
 
-    # Channels test
-    if chat.id == 1749085456 or chat.id == 1621430368 or chat.id == 1563831940:
-        operation = format_forex_king(message, chat.title)
+        # Channels forex king (son todos iguales)
+        if chat.id == 1749085456 or chat.id == 1621430368 or chat.id == 1563831940:
+            operation = format_forex_king(message, chat.title)
 
-    # Channels test
-    if chat.id == 1558245993:
-        operation = format_forex_king(message, chat.title)
+        # Channels test
+        if chat.id == 1558245993:
+            operation = format_forex_king(message, chat.title)
 
-    return operation
+        return operation
+
+    except Exception as err:
+        print(f"Unexpected {err=}, {type(err)=}")
+        return operation
