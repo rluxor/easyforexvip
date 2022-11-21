@@ -1,11 +1,10 @@
 # This is a sample Python script.
-from datetime import time
 
+from datetime import date
 import telegram_client as tc
 import src
 from telethon import events
 import zmq
-
 
 channels = tc.get_channels()
 
@@ -31,13 +30,22 @@ async def new_message_listener(event):
     operation = src.format_message_text(event)
 
     if operation is None:
-        print("--> {}: Msg Not Send: {}".format(event.chat.title, event.message.message))
+        # print("--> {}: Msg Not Send: {}".format(event.chat.title, event.message.message))
+        log_msg = "{} - {} - Msg {} Not Send --> {}\n".format(date.today(), event.chat.title, event.message.id, event.message.message)
+        src.write_log(log_msg, False)
+
     else:
-        print(operation)
+
+        log_msg = "{} - {} - New Trade --> {}\n".format(date.today(), event.chat.title, operation)
+        src.write_log(log_msg, True)
+
         socket.send_string(operation)
 
         messageRecv = socket.recv().decode('utf-8')
-        print(messageRecv)
+
+        log_msg = "{} - {} - Server Response --> {}\n".format(date.today(), event.chat.title, messageRecv)
+        src.write_log(log_msg, True)
+
 
 with client:
     client.run_until_disconnected()

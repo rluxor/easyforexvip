@@ -1,5 +1,16 @@
 import json
 
+log_file = 'tgm_mt4.log'
+
+
+def write_log(log_msg, print_log):
+
+    if print_log:
+        print(log_msg)
+
+    with open(log_file, 'a') as f:
+        f.writelines(log_msg)
+
 
 def format_easy_forex(message, title):
     operation = None
@@ -7,6 +18,9 @@ def format_easy_forex(message, title):
 
     # Message format to send
     # id,date,symbol,action,open_price,tp_scalping,tp_intraday,tp_swing,sl_price,comment
+
+    if 'GOLD' in message_text:
+        message_text = message_text.replace('GOLD', 'XAUUSD')
 
     # BUY AND SELL ORDERS
     if '@' in message_text:
@@ -33,6 +47,9 @@ def format_blue_forex(message, title):
 
     # Message format to send
     # id,date,symbol,action,open_price,tp_scalping,tp_intraday,tp_swing,sl_price
+
+    if 'GOLD' in message_text:
+        message_text = message_text.replace('GOLD', 'XAUUSD')
 
     # BUY AND SELL ORDERS
     if 'SELL' in message_text or 'BUY' in message_text:
@@ -68,6 +85,9 @@ def format_forex_king(message, title):
 
     # Message format to send
     # id,date,symbol,action,open_price,tp_scalping,tp_intraday,tp_swing,sl_price
+
+    if 'GOLD' in message_text:
+        message_text = message_text.replace('GOLD', 'XAUUSD')
 
     # BUY AND SELL ORDERS
     if 'SELL' in message_text or 'BUY' in message_text:
