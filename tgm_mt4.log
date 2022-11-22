@@ -5,3 +5,22 @@
 2022-11-21 - luxortest - New Trade --> 260
 2022-11-21 - luxortest - Msg 262 Not Send --> 3
 2022-11-21 - luxortest - New Trade --> 263,2022-11-21 21:39:06,USDCAD,SELL,1.3380,1.320,0,0,1.3420,luxortest
+2022-11-21 - luxortest - Msg 272 Not Send --> 2
+2022-11-22 - luxortest - Msg 279 Not Send 
+2022-11-22 - luxortest - Msg 280 Not Send 
+2022-11-Tue 00:04:25 - luxortest - Msg 282 Not Send 
+2022-11-Tue 00:04:29 - luxortest - Msg 283 Not Send 
+2022-11-22 00:05:01 - luxortest - Msg 285 Not Send 
+2022-11-22 00:05:01 - luxortest - Msg 286 Not Send 
+2022-11-22 20:39:37 - luxortest - Msg 290 Not Send 
+
+2022-11-22 20:39:40 - luxortest - Msg 291 Not Send 
+
+2022-11-22 20:39:58 - luxortest - New Trade   --> 292,2022-11-22 19:39:58,USDCAD,SELL,1.3380,1.320,0,0,1.3420,luxortest
+2022-11-22 20:41:09 - [luxortest] - New Trade   --> 294,2022-11-22 19:41:08,USDCAD,SELL,1.3380,1.320,0,0,1.3420,luxortest
+2022-11-22 20:42:37 - [luxortest] - Msg 300 Not Send 
+
+2022-11-22 20:42:49 - [luxortest] - Msg 301 Not Send 
+
+2022-11-22 20:45:56 - [luxortest] - Msg 304 Not Send 
+

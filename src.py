@@ -9,7 +9,7 @@ def write_log(log_msg, print_log):
         print(log_msg)
 
     with open(log_file, 'a') as f:
-        f.writelines(log_msg)
+        f.writelines(log_msg + '\n')
 
 
 def format_easy_forex(message, title):
@@ -23,7 +23,7 @@ def format_easy_forex(message, title):
         message_text = message_text.replace('GOLD', 'XAUUSD')
 
     # BUY AND SELL ORDERS
-    if '@' in message_text:
+    if '@' in message_text and ('BUY' in message_text or 'SELL' in message_text):
         output = message_text.split()
 
         operation = str(message.id) + ',' + message.date.strftime("%Y-%m-%d %H:%M:%S") + ',' + output[0] + ',' \
@@ -103,16 +103,12 @@ def format_forex_king(message, title):
             # Get the original id reply
             operation = str(message.reply_to_msg_id) + ',' + message.date.strftime("%Y-%m-%d %H:%M:%S") + ',' + \
                         'NOW' + ',' + 'CLOSE' + ',0,0,0,0,0' + ',' + title
-
-        if 'IN -' in message_text and message.is_reply:
-            # Get the original id reply
-            operation = str(message.reply_to_msg_id) + ',' + message.date.strftime("%Y-%m-%d %H:%M:%S") + ',' + \
-                        'NOW' + ',' + 'CLOSE' + ',0,0,0,0,0' + ',' + title
-
-        if 'HALF' in message_text and message.is_reply:
-            # Get the original id reply
+        elif 'HALF' in message_text and message.is_reply:
             operation = str(message.reply_to_msg_id) + ',' + message.date.strftime("%Y-%m-%d %H:%M:%S") + ',' + \
                         'HALF' + ',' + 'CLOSE' + ',0,0,0,0,0' + ',' + title
+        else:
+            operation = str(message.reply_to_msg_id) + ',' + message.date.strftime("%Y-%m-%d %H:%M:%S") + ',' + \
+                        'NOW' + ',' + 'CLOSE' + ',0,0,0,0,0' + ',' + title
 
     return operation
 

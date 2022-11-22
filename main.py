@@ -1,6 +1,6 @@
 # This is a sample Python script.
-
-from datetime import date
+import string
+from datetime import date, datetime
 import telegram_client as tc
 import src
 from telethon import events
@@ -30,21 +30,24 @@ async def new_message_listener(event):
     operation = src.format_message_text(event)
 
     if operation is None:
-        # print("--> {}: Msg Not Send: {}".format(event.chat.title, event.message.message))
-        log_msg = "{} - {} - Msg {} Not Send --> {}\n".format(date.today(), event.chat.title, event.message.id, event.message.message)
+        log_msg = "{} - [{}] - Msg {} Not Send \n".format(datetime.now().strftime("%Y-%m-%d %H:%M:%S"), event.chat.title, event.message.id)
         src.write_log(log_msg, False)
 
     else:
 
-        log_msg = "{} - {} - New Trade --> {}\n".format(date.today(), event.chat.title, operation)
+        log_msg = "{} - [{}] - New Trade   --> {}".format(datetime.now().strftime("%Y-%m-%d %H:%M:%S"), event.chat.title, operation)
+        if 'CLOSE' in operation:
+            log_msg = "{} - [{}] - Close Trade   --> {}".format(datetime.now().strftime("%Y-%m-%d %H:%M:%S"), event.chat.title, operation)
+
         src.write_log(log_msg, True)
 
         socket.send_string(operation)
 
         messageRecv = socket.recv().decode('utf-8')
 
-        log_msg = "{} - {} - Server Response --> {}\n".format(date.today(), event.chat.title, messageRecv)
+        log_msg = "{} - [{}] - Server Response --> {}".format(datetime.now().strftime("%Y-%m-%d %H:%M:%S"), event.chat.title, messageRecv)
         src.write_log(log_msg, True)
+        print('\n')
 
 
 with client:
