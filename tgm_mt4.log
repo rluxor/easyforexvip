@@ -24,3 +24,33 @@
 
 2022-11-22 20:45:56 - [luxortest] - Msg 304 Not Send 
 
+2022-11-24 00:01:31 - [luxortest] - Msg 352 Not Send 
+
+2022-11-24 00:01:33 - [luxortest] - New Trade   --> 353,2022-11-23 23:01:32,AUDUSD,BUY,0.66460,0.66660,0.66960,0.67460,0.65960,luxortest
+2022-11-24 00:01:34 - [luxortest] - Server Response --> Request Processed: 353,2022-11-23 23:01:32,AUDUSD,BUY,0.66460,0.66660,0.66960,0.67460,0.65960,luxortest
+2022-11-24 00:07:43 - [luxortest] - Msg 354 Not Send 
+
+2022-11-24 00:07:46 - [luxortest] - Msg 355 Not Send 
+
+2022-11-24 00:08:24 - [luxortest] - Msg 356 Not Send 
+
+2022-11-24 00:09:05 - [luxortest] - Msg 358 Not Send 
+
+2022-11-24 00:09:08 - [luxortest] - Msg 359 Not Send 
+
+2022-11-24 00:09:50 - [luxortest] - Msg 360 Not Send 
+
+2022-11-24 00:10:08 - [luxortest] - Msg 361 Not Send 
+
+2022-11-24 00:10:46 - [luxortest] - New Trade   --> 362,2022-11-23 23:10:38,AUDUSD,BUY,0.67336,0.67530,0.68960,0.69460,0.65960,luxortest
+2022-11-24 00:12:29 - [luxortest] - Server Response --> Request Processed: 362,2022-11-23 23:10:38,AUDUSD,BUY,0.67336,0.67530,0.68960,0.69460,0.65960,luxortest
+2022-11-24 00:33:06 - [luxortest] - Msg 364 Not Send 
+
+2022-11-24 00:33:11 - [luxortest] - New Trade       --> 365,2022-11-23 23:33:10,AUDUSD,BUY,0.67336,0.67530,0.68960,0.69460,0.6596,luxortest
+2022-11-24 00:33:11 - [luxortest] - Server Response --> Orders opened: 213614799213614800213614801
+2022-11-24 00:35:38 - [luxortest] - Msg 366 Not Send 
+
+2022-11-24 00:35:43 - [luxortest] - New Trade       --> 367,2022-11-23 23:35:42,AUDUSD,BUY,0.67336,0.67530,0.68960,0.69460,0.6596,luxortest
+2022-11-24 00:35:44 - [luxortest] - Server Response --> Orders opened: 213614856;213614857;213614858
+2022-11-24 00:36:11 - [luxortest] - New Trade       --> 368,2022-11-23 23:36:10,AUDUSD,BUY,0.67336,0.67530,0.68960,0.69460,0.6596,luxortest
+2022-11-24 00:36:11 - [luxortest] - Server Response --> Orders opened: 213614867;213614868;213614869

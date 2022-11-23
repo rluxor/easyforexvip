@@ -134,7 +134,7 @@ def format_message_text(event):
 
         # Channels test
         if chat.id == 1558245993:
-            operation = format_forex_king(message, chat.title)
+            operation = format_easy_forex(message, chat.title)
 
         return operation
 

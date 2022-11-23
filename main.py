@@ -35,7 +35,7 @@ async def new_message_listener(event):
 
     else:
 
-        log_msg = "{} - [{}] - New Trade   --> {}".format(datetime.now().strftime("%Y-%m-%d %H:%M:%S"), event.chat.title, operation)
+        log_msg = "{} - [{}] - New Trade       --> {}".format(datetime.now().strftime("%Y-%m-%d %H:%M:%S"), event.chat.title, operation)
         if 'CLOSE' in operation:
             log_msg = "{} - [{}] - Close Trade   --> {}".format(datetime.now().strftime("%Y-%m-%d %H:%M:%S"), event.chat.title, operation)
 
