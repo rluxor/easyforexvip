@@ -5,6 +5,7 @@ import telegram_client as tc
 import src
 from telethon import events
 import zmq
+import orderSender
 
 channels = tc.get_channels()
 
@@ -17,6 +18,7 @@ client = tc.init_telegram_client()
 
 # Inicializamos la conexion socket para mt4
 context = zmq.Context()
+
 socket = context.socket(zmq.REQ)
 socket.bind(socket_address)
 
@@ -27,28 +29,29 @@ print('TELEGRAM LISTENER READY ON ADDRESS: ', socket_address)
 @client.on(events.NewMessage(chats=channels))
 async def new_message_listener(event):
     # get message
-    operation = src.format_message_text(event)
+    operations = orderSender.format_message_text(event)
 
-    if operation is None:
+    if len(operations) == 0:
         log_msg = "{} - [{}] - Msg {} Not Send \n".format(datetime.now().strftime("%Y-%m-%d %H:%M:%S"), event.chat.title, event.message.id)
         src.write_log(log_msg, False)
 
     else:
 
-        log_msg = "{} - [{}] - New Trade       --> {}".format(datetime.now().strftime("%Y-%m-%d %H:%M:%S"), event.chat.title, operation)
-        if 'CLOSE' in operation:
-            log_msg = "{} - [{}] - Close Trade   --> {}".format(datetime.now().strftime("%Y-%m-%d %H:%M:%S"), event.chat.title, operation)
+        for operation in operations:
 
-        src.write_log(log_msg, True)
+            log_msg = "{} - [{}] - New Trade    --> {}".format(datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                                                                  event.chat.title, operation)
+            if 'CLOSE' in operation:
+                log_msg = "{} - [{}] - Close Trade  --> {}".format(datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                                                                    event.chat.title, operation)
 
-        socket.send_string(operation)
+            src.write_log(log_msg, True)
 
-        messageRecv = socket.recv().decode('utf-8')
-
-        log_msg = "{} - [{}] - Server Response --> {}".format(datetime.now().strftime("%Y-%m-%d %H:%M:%S"), event.chat.title, messageRecv)
-        src.write_log(log_msg, True)
-        print('\n')
-
+            #socket.send_string(operation)
+            #messageRecv = socket.recv().decode('utf-8')
+            messageRecv = "RESPONSE TEST"
+            log_msg = "{} - [{}] - MT4 Response --> {}".format(datetime.now().strftime("%Y-%m-%d %H:%M:%S"), event.chat.title, messageRecv)
+            src.write_log(log_msg, True)
 
 with client:
     client.run_until_disconnected()

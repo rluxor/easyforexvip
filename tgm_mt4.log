@@ -54,3 +54,72 @@
 2022-11-24 00:35:44 - [luxortest] - Server Response --> Orders opened: 213614856;213614857;213614858
 2022-11-24 00:36:11 - [luxortest] - New Trade       --> 368,2022-11-23 23:36:10,AUDUSD,BUY,0.67336,0.67530,0.68960,0.69460,0.6596,luxortest
 2022-11-24 00:36:11 - [luxortest] - Server Response --> Orders opened: 213614867;213614868;213614869
+2022-11-26 14:17:05 - [luxortest] - Msg 374 Not Send 
+
+2022-11-26 15:22:29 - [luxortest] - New Trade       --> 385;2022-11-26 13:28:15;GBPAUD;BUY;1.79650;1.78600;EasyForex,385,TP1,1.79650
+2022-11-26 15:25:12 - [luxortest] - New Trade       --> 387;2022-11-26 14:25:10;GBPAUD;BUY;1.79650;1.78600;EasyForex,387,TP1,1.79650
+2022-11-26 15:25:12 - [luxortest] - Server Response --> RESPONSE TEST
+2022-11-26 15:25:12 - [luxortest] - New Trade       --> 387;2022-11-26 14:25:10;GBPAUD;BUY;1.79950;1.78600;EasyForex,387,TP2,1.79950
+2022-11-26 15:25:12 - [luxortest] - Server Response --> RESPONSE TEST
+2022-11-26 15:25:12 - [luxortest] - New Trade       --> 387;2022-11-26 14:25:10;GBPAUD;BUY;1.80550;1.78600;EasyForex,387,TP3,1.80550
+2022-11-26 15:25:12 - [luxortest] - Server Response --> RESPONSE TEST
+2022-11-26 15:26:05 - [luxortest] - New Trade       --> 389;2022-11-26 14:26:03;GBPAUD;BUY;1.79650;1.78600;EasyForex,389,TP1,1.79650
+2022-11-26 15:26:05 - [luxortest] - Server Response --> RESPONSE TEST
+2022-11-26 15:26:05 - [luxortest] - New Trade       --> 389;2022-11-26 14:26:03;GBPAUD;BUY;1.79950;1.78600;EasyForex,389,TP2,1.79950
+2022-11-26 15:26:05 - [luxortest] - Server Response --> RESPONSE TEST
+2022-11-26 15:26:05 - [luxortest] - New Trade       --> 389;2022-11-26 14:26:03;GBPAUD;BUY;1.80550;1.78600;EasyForex,389,TP3,1.80550
+2022-11-26 15:26:05 - [luxortest] - Server Response --> RESPONSE TEST
+2022-11-26 15:26:57 - [luxortest] - New Trade       --> 390;2022-11-26 14:26:55;AUDNZD;SELL;1.07850;1.08650;EasyForex,390,TP1,1.07850
+2022-11-26 15:26:57 - [luxortest] - Server Response --> RESPONSE TEST
+2022-11-26 15:26:57 - [luxortest] - New Trade       --> 390;2022-11-26 14:26:55;AUDNZD;SELL;1.07550;1.08650;EasyForex,390,TP2,1.07550
+2022-11-26 15:26:57 - [luxortest] - Server Response --> RESPONSE TEST
+2022-11-26 15:26:57 - [luxortest] - New Trade       --> 390;2022-11-26 14:26:55;AUDNZD;SELL;1.07050;1.08650;EasyForex,390,TP3,1.07050
+2022-11-26 15:26:57 - [luxortest] - Server Response --> RESPONSE TEST
+2022-11-26 15:29:34 - [luxortest] - Msg 397 Not Send 
+
+2022-11-26 15:29:38 - [luxortest] - New Trade       --> 398;2022-11-26 14:29:36;AUDNZD;SELL;1.07850;1.08650;EasyForex,398,TP1,1.07850
+2022-11-26 15:29:38 - [luxortest] - Server Response --> RESPONSE TEST
+2022-11-26 15:29:38 - [luxortest] - New Trade       --> 398;2022-11-26 14:29:36;AUDNZD;SELL;1.07550;1.08650;EasyForex,398,TP2,1.07550
+2022-11-26 15:29:38 - [luxortest] - Server Response --> RESPONSE TEST
+2022-11-26 15:29:38 - [luxortest] - New Trade       --> 398;2022-11-26 14:29:36;AUDNZD;SELL;1.07050;1.08650;EasyForex,398,TP3,1.07050
+2022-11-26 15:29:38 - [luxortest] - Server Response --> RESPONSE TEST
+2022-11-26 15:45:31 - [luxortest] - New Trade       --> 400;2022-11-26 14:45:29;AUDNZD;SELL;1.07850;1.08650;EasyForex,400,TP1,1.07850
+2022-11-26 15:45:31 - [luxortest] - Server Response --> RESPONSE TEST
+2022-11-26 15:45:31 - [luxortest] - New Trade       --> 400;2022-11-26 14:45:29;AUDNZD;SELL;1.07550;1.08650;EasyForex,400,TP2,1.07550
+2022-11-26 15:45:31 - [luxortest] - Server Response --> RESPONSE TEST
+2022-11-26 15:45:31 - [luxortest] - New Trade       --> 400;2022-11-26 14:45:29;AUDNZD;SELL;1.07050;1.08650;EasyForex,400,TP3,1.07050
+2022-11-26 15:45:31 - [luxortest] - Server Response --> RESPONSE TEST
+2022-11-26 15:45:45 - [luxortest] - Msg 401 Not Send 
+
+2022-11-26 15:47:09 - [luxortest] - Msg 404 Not Send 
+
+2022-11-26 15:47:34 - [luxortest] - Msg 405 Not Send 
+
+2022-11-26 15:48:10 - [luxortest] - Close Trade   --> 400,2022-11-26 14:48:08,NOW,CLOSE,0,0,EasyForex,400,CLOSE,0
+2022-11-26 15:48:10 - [luxortest] - Server Response --> RESPONSE TEST
+2022-11-26 15:49:10 - [luxortest] - Close Trade   --> 400;2022-11-26 14:49:08;NOW;CLOSE;0;0;EasyForex,400,CLOSE,0
+2022-11-26 15:49:10 - [luxortest] - Server Response --> RESPONSE TEST
+2022-11-26 15:50:05 - [luxortest] - Close Trade   --> 400;2022-11-26 14:50:03;NOW;CLOSE;0;0;EasyForex,400,CLOSE,0
+2022-11-26 15:50:05 - [luxortest] - MT4 Response --> RESPONSE TEST
+2022-11-26 15:50:35 - [luxortest] - Close Trade  --> 400;2022-11-26 14:50:33;NOW;CLOSE;0;0;EasyForex,400,CLOSE,0
+2022-11-26 15:50:35 - [luxortest] - MT4 Response --> RESPONSE TEST
+2022-11-26 15:50:43 - [luxortest] - New Trade       --> 414;2022-11-26 14:50:41;AUDNZD;SELL;1.07850;1.08650;EasyForex,414,TP1,1.07850
+2022-11-26 15:50:43 - [luxortest] - MT4 Response --> RESPONSE TEST
+2022-11-26 15:50:43 - [luxortest] - New Trade       --> 414;2022-11-26 14:50:41;AUDNZD;SELL;1.07550;1.08650;EasyForex,414,TP2,1.07550
+2022-11-26 15:50:43 - [luxortest] - MT4 Response --> RESPONSE TEST
+2022-11-26 15:50:43 - [luxortest] - New Trade       --> 414;2022-11-26 14:50:41;AUDNZD;SELL;1.07050;1.08650;EasyForex,414,TP3,1.07050
+2022-11-26 15:50:43 - [luxortest] - MT4 Response --> RESPONSE TEST
+2022-11-26 15:51:06 - [luxortest] - Msg 415 Not Send 
+
+2022-11-26 15:51:09 - [luxortest] - New Trade   --> 416;2022-11-26 14:51:07;AUDNZD;SELL;1.07850;1.08650;EasyForex,416,TP1,1.07850
+2022-11-26 15:51:09 - [luxortest] - MT4 Response --> RESPONSE TEST
+2022-11-26 15:51:09 - [luxortest] - New Trade   --> 416;2022-11-26 14:51:07;AUDNZD;SELL;1.07550;1.08650;EasyForex,416,TP2,1.07550
+2022-11-26 15:51:09 - [luxortest] - MT4 Response --> RESPONSE TEST
+2022-11-26 15:51:09 - [luxortest] - New Trade   --> 416;2022-11-26 14:51:07;AUDNZD;SELL;1.07050;1.08650;EasyForex,416,TP3,1.07050
+2022-11-26 15:51:09 - [luxortest] - MT4 Response --> RESPONSE TEST
+2022-11-26 15:51:27 - [luxortest] - New Trade    --> 418;2022-11-26 14:51:25;AUDNZD;SELL;1.07850;1.08650;EasyForex,418,TP1,1.07850
+2022-11-26 15:51:27 - [luxortest] - MT4 Response --> RESPONSE TEST
+2022-11-26 15:51:27 - [luxortest] - New Trade    --> 418;2022-11-26 14:51:25;AUDNZD;SELL;1.07550;1.08650;EasyForex,418,TP2,1.07550
+2022-11-26 15:51:27 - [luxortest] - MT4 Response --> RESPONSE TEST
+2022-11-26 15:51:27 - [luxortest] - New Trade    --> 418;2022-11-26 14:51:25;AUDNZD;SELL;1.07050;1.08650;EasyForex,418,TP3,1.07050
+2022-11-26 15:51:27 - [luxortest] - MT4 Response --> RESPONSE TEST
