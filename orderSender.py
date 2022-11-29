@@ -4,12 +4,8 @@ import json
 def format_easy_forex(message, title):
 
     message_text = message.message.upper()
-
     # Array to store 3 operations
     operations = []
-
-    # Message format to send
-    # 1. id,date,symbol,action,open_price,tp_scalping,tp_intraday,tp_swing,sl_price,comment
 
     # id,date,symbol,action,open_price,tp_scalping,sl_price,comment
 
@@ -54,16 +50,12 @@ def format_easy_forex(message, title):
 
 
 def format_message_text(event):
-    operation = None
-
+    operations = []
     message = event.message
     chat = event.chat
 
     try:
-        # easy forex VIP
-        if chat.id == 1436688109 or chat.id == 1558245993:
-            operations = format_easy_forex(message, chat.title)
-
+        operations = format_easy_forex(message, chat.title)
         return operations
 
     except Exception as err:

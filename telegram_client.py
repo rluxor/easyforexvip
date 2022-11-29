@@ -26,15 +26,11 @@ def init_telegram_client():
 
 
 def get_channels():
+    channels_real = config['TELEGRAM-CHANNELS']['channels']
+    channels = list(map(int, channels_real.split(',')))
+    return channels
 
-    mode = config['MODE']['mode']
 
-    if mode == "TEST":
-        channels_test = config['TELEGRAM-CHANNELS']['channels_test']
-        channels = list(map(int, channels_test.split(',')))
-        return channels
-    else:
-        channels_real = config['TELEGRAM-CHANNELS']['channels_real']
-        channels = list(map(int, channels_real.split(',')))
-        return channels
-
+def get_socket():
+    socket = config['MT4-SOCKET']['socket']
+    return int(socket)
